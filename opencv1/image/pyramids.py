@@ -1,0 +1,18 @@
+import cv2
+from matplotlib import pyplot as plt
+img=cv2.imread("Desktop/ayushi.jpg")
+lower=cv2.pyrDown(img)
+higher_reso2 = cv2.pyrDown(lower)
+higher_reso3 = cv2.pyrDown(higher_reso2)
+resol1=cv2.pyrUp(higher_reso3)
+resol2=cv2.pyrUp(resol1)
+resol3=cv2.pyrUp(resol2)
+plt.subplot(2,3,1),plt.imshow(lower)
+plt.subplot(2,3,2),plt.imshow(higher_reso2)
+plt.subplot(2,3,3),plt.imshow(higher_reso3)
+plt.subplot(2,3,4),plt.imshow(resol1)
+plt.subplot(2,3,5),plt.imshow(resol2)
+plt.subplot(2,3,6),plt.imshow(resol3)
+plt.show()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
